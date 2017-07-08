@@ -12,6 +12,9 @@ namespace AspNetCoreSpa.Server
         public DbSet<Content> Content { get; set; }
         public DbSet<ContentText> ContentText { get; set; }
 
+        public DbSet<WorkingRecord> WorkRecords { get; set; }
+
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
 
@@ -21,6 +24,17 @@ namespace AspNetCoreSpa.Server
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
+
+            modelBuilder.Entity<WorkingRecord>(entity =>
+            {
+                entity.HasOne(w => w.User)
+                .WithMany(u => u.WorkingRecords)
+                .HasForeignKey(w => w.UserId);
+            }
+            );
+
+            modelBuilder.Entity<WorkingRecord>()
+                .HasIndex(w => new { w.UserId, w.RecordeDate });
         }
     }
 }
