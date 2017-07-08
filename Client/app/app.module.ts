@@ -15,9 +15,11 @@ import { routing } from './app.routes';
 import { AppService } from './app.service';
 import { appReducer } from './app-store';
 import { AppComponent } from './app.component';
+import { WorkingRecordsComponent } from './working-records/working-records.component';
+import { WorkingRecordsDetailsComponent } from './working-records-details/working-records-details.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, WorkingRecordsComponent, WorkingRecordsDetailsComponent],
     imports: [
         BrowserAnimationsModule,
         BrowserModule,
