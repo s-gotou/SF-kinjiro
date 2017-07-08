@@ -12,7 +12,7 @@ namespace AspNetCoreSpa.Server
         public DbSet<Content> Content { get; set; }
         public DbSet<ContentText> ContentText { get; set; }
 
-        public DbSet<WorkingRecord> WorkRecords { get; set; }
+        public DbSet<WorkingRecord> WorkingRecords { get; set; }
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -34,7 +34,8 @@ namespace AspNetCoreSpa.Server
             );
 
             modelBuilder.Entity<WorkingRecord>()
-                .HasIndex(w => new { w.UserId, w.RecordeDate });
+                .HasIndex(w => new { w.UserId, w.RecordeDate })
+                .IsUnique();
         }
     }
 }
