@@ -130,14 +130,14 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 {
                     Id =2,
                     UserId=1,
-                    RecordeDate=20170708,
+                    RecordeDate=DateTime.Now.Date,
                     ClockIn=DateTime.Now
                 },
                 new WorkingRecord()
                 {
                     Id =1,
                     UserId=1,
-                    RecordeDate=20170707,
+                    RecordeDate=DateTime.Now.Date,
                     ClockIn=new DateTime(2017,7,7,8,50,23),
                     ClockOut=new DateTime(2017,7,7,17,45,43),
                 },
@@ -161,7 +161,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 {
                     Id =2,
                     UserId=1,
-                    RecordeDate=20170708,
+                    RecordeDate=DateTime.Now.Date,
                     ClockIn=new DateTime(2017,7,8,8,27,13),
                     ClockOut=DateTime.Now
                 },
@@ -169,7 +169,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 {
                     Id =1,
                     UserId=1,
-                    RecordeDate=20170707,
+                    RecordeDate=DateTime.Now.Date,
                     ClockIn=new DateTime(2017,7,7,8,50,23),
                     ClockOut=new DateTime(2017,7,7,17,45,43),
                 },

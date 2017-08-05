@@ -26,7 +26,7 @@ namespace AspNetCoreSpa.Server.Entities
         /// 勤務日
         /// </summary>
         [Required]
-        public int RecordeDate { get; set; }
+        public DateTime RecordeDate { get; set; }
 
         /// <summary>
         /// 出勤時間

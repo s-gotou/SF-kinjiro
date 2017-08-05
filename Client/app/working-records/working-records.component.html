@@ -1,3 +1,15 @@
-<p>
-  working-records works!
-</p>
+﻿<button (click) ="clockIn()">出勤</button>
+<button (click)="clockOut()">退勤</button>
+
+<table *ngIf="workingRecords.count !=0">
+    <tr>
+        <th>勤務日</th>
+        <th>勤務日</th>
+        <th>勤務日</th>
+    </tr>
+    <tr *ngFor="let workingRecord of workingRecords">
+        <td>{{workingRecord.recordeDate | date:'yyyy/MM/dd'}}</td>
+        <td>{{workingRecord.clockIn | date:'HH:mm:ss'}}</td>
+        <td>{{workingRecord.clockOut | date:'HH:mm:ss'}}</td>
+    </tr>
+</table>

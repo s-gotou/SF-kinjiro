@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkingRecord } from "../core/models/working-record";
+import { Http } from "@angular/http";
+
 
 @Component({
   selector: 'appc-working-records',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkingRecordsComponent implements OnInit {
 
-  constructor() { }
+    workingRecords: WorkingRecord[];
 
-  ngOnInit() {
-  }
+    constructor(private http: Http) {
+    }
+
+    ngOnInit() {
+        this.workingRecords = [];
+    }
+
+    clockIn() {
+        this.http.post("./api/WorkingRecords/ClockIn",JSON.stringify("")).subscribe(re => this.workingRecords = re.json());
+    }
+    clockOut() {
+        this.http.post("./api/WorkingRecords/ClockOut", JSON.stringify("")).subscribe(re => this.workingRecords = re.json());
+    }
 
 }

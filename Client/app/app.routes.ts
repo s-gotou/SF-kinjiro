@@ -1,4 +1,5 @@
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { WorkingRecordsComponent } from "./working-records/working-records.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'examples', loadChildren: './+examples/examples.module#ExamplesModule'
+  },
+  {
+    path: 'working-records', component: WorkingRecordsComponent
   }
 ];
 
